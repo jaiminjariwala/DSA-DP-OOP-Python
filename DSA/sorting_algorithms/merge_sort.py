@@ -1,4 +1,9 @@
-# Key to Note down:
+# Keys to Note down:
+
+# Used when sorting large-datasets.
+# Time-Complexity: Best, Worst, Average - O(n log(n))
+# Space-Complexity: O(n) - extra space for merging
+
 # When a function calls itself recursively, it pauses execution at that point and starts a new instance of itself. Each call gets its "OWN MEMORY SPACE" on the call stack.
 
 # So each recursive call remembers its own copy of array, and values like "left_half" and "right_half" belong to different calls, not the same one.
