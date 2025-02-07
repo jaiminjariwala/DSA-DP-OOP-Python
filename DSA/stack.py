@@ -1,14 +1,14 @@
-from typing import Union
+from typing import List, Any, Optional
 
 class Stack:
-    def __init__(self):
+    def __init__(self) -> None:
         # initialize an empty list as a stack
-        self.stack = []
+        self.stack: List[Any] = []
 
-    def current_stack_elements(self):
+    def current_stack_elements(self) -> List[Any]:
         return self.stack
 
-    def push(self, item: Union[int, float, str, chr]):
+    def push(self, item: Any) -> None:
         """
         Add an element to the top of the stack
         
@@ -25,7 +25,7 @@ class Stack:
         """
         return len(self.stack) == 0
 
-    def pop(self):
+    def pop(self) -> Optional[Any]:
         """
         Remove and return the top element of the stack
         """
@@ -33,7 +33,7 @@ class Stack:
             return "Stack is empty"
         return self.stack.pop()
 
-    def peek(self):
+    def peek(self) -> Optional[Any]:
         """
         Return the top element without removing it
         """
@@ -41,7 +41,7 @@ class Stack:
             return "Stack is empty"
         return self.stack[-1]
 
-    def size(self):
+    def size(self) -> int:
         """
         Return the number of elements in the stack
         """
