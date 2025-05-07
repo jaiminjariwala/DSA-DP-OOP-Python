@@ -25,7 +25,7 @@ def fibonacci(n):
     fib_sequence = [0, 1]
 
     # generate next numbers upto n terms
-    while len(fib_sequence) <= n:
+    while len(fib_sequence) < n:
         # next number is the sum of last 2 numbers
         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
 
