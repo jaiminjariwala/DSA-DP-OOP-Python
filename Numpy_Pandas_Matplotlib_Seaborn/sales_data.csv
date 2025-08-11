@@ -1,0 +1,11 @@
+Order ID,Customer Name,Product,Category,Order Date,Quantity,Price,Total,Country,City
+1001,Alice,Laptop,Electronics,2023-01-15,2,800,1600.0,USA,New York 
+1002,BOB,Phone,Electrnics,15/02/2023,3,500,1500.0,usa, los angeles
+1003,Charlie,Tablet,Electronics,2023/03/10,1,300,,,chiCago
+1004,David,Laptop,Electronics,2023-04-05,5,800,4000.0,Canada,Toronto
+1005,Eva,Headphones,Accessories,05-05-2023,2,50,100.0,CANADA, vancouver 
+1006,Frank,Phone,Electronics,2023-06-20,1,500,500.0,Mexico,MexicoCity
+1007, Grace,Laptop,Electronics,2023/07/25,4,800,,USA,san francisco 
+1008,henry,Tablet,Electrnics,2023-08-15,three,300,900.0,mexico, guadalajara
+1009,Ivy,Headphones,Accessories,15-09-2023,2,50,100.0,,monterrey 
+1010,jack ,Phone,Electronics,2023-10-10,3,500,1500.0,Usa,Houston

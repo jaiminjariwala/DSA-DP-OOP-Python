@@ -1,0 +1,11 @@
+order_id,customer_name,product,category,order_date,quantity,price,total,country,city
+1001,Alice,Laptop,Electronics,2023-01-15,2,800,1600.0,Usa,New York
+1002,Bob,Phone,Electronics,2023-02-15,3,500,1500.0,Usa,Los Angeles
+1003,Charlie,Tablet,Electronics,2023-03-10,1,300,300.0,Unknown,Chicago
+1004,David,Laptop,Electronics,2023-04-05,5,800,4000.0,Canada,Toronto
+1005,Eva,Headphones,Accessories,2023-05-05,2,50,100.0,Canada,Vancouver
+1006,Frank,Phone,Electronics,2023-06-20,1,500,500.0,Mexico,Mexicocity
+1007,Grace,Laptop,Electronics,2023-07-25,4,800,3200.0,Usa,San Francisco
+1008,Henry,Tablet,Electronics,2023-08-15,3,300,900.0,Mexico,Guadalajara
+1009,Ivy,Headphones,Accessories,2023-09-15,2,50,100.0,Unknown,Monterrey
+1010,Jack,Phone,Electronics,2023-10-10,3,500,1500.0,Usa,Houston
