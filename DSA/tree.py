@@ -13,7 +13,7 @@
 # Each traversal will print node values to demonstrate the order of visitation.
 
 # Binary Search Tree (BST):
-# A BST is a binary tree where each node's left subtree contains values less than the node's value, and the right subtree contains values greater than the node's value. This property enables efficient searching, insertion, and deletion.
+# A BST is a binary tree where each node's left subtree contains values less than the node's value, and the right subtree contains values greater than or equal to the node's value. This property enables efficient searching, insertion, and deletion.
     # Search: Recursively or iteratively find a value by comparing it with the current node and moving left or right.
     # Insertion: Insert a new value by traversing to the appropriate leaf position.
     # Deletion: Handle three cases (node with no children, one child, or two children) and maintain BST properties.
@@ -79,3 +79,29 @@ class BinaryTree:
                 queue.append(node.right)
 
 
+class BST:
+    """Class for Binary Search Tree operations"""
+    def __init__(self):
+        """
+        When you create a BST, it starts empty.
+        self.root (pointer) will point to the very first node when you insert the first value.
+        """
+        self.root = None
+
+    def insert(self, value):
+        """
+        This is the public method you call to insert a new value into the BST.
+        It calls the helper function '_insert_recursive', starting at the root node.
+        Why recursive? Because to insert, you may need to go down multiple levels until you find the right spot.
+        """
+        self.root = self._insert_recursive(self.root, value)
+    
+    def _insert_recursive(self, node, value):
+        """helper method for recursive insertion"""
+        if not node:
+            return Node(value)  # base case: found empty spot, create new Node
+        if value < node.value:  # if node exists & value less than node.value
+            node.left = self._insert_recursive(node.left, value)    # node.left means left side of root
+        else:
+            node.right = self._insert_recursive(node.right, value)
+        return node
