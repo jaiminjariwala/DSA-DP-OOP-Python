@@ -97,7 +97,11 @@ class BST:
         self.root = self._insert_recursive(self.root, value)
     
     def _insert_recursive(self, node, value):
-        """helper method for recursive insertion"""
+        """
+        Helper method for recursive insertion.
+        Python doesn't enforce strict privacy like Java or C++ but...
+        Underscore before the method name,tells other programmers: Don't call this directly - it's a helper method!
+        """
         if not node:
             return Node(value)  # base case: found empty spot, create new Node
         if value < node.value:  # if node exists & value less than node.value
@@ -105,3 +109,58 @@ class BST:
         else:
             node.right = self._insert_recursive(node.right, value)
         return node
+    
+    def search(self, value):
+        """Search for a value in the BST"""
+        return self._search_recursive(self.root, value)
+    
+    def _search_recursive(self, node, value):
+        """Helper method for recursive search"""
+        if not node or node.value == value:
+            return node
+        if value < node.value:
+            return self._search_recursive(node.left, value)
+        return self._search_recursive(node.right, value)
+
+    def delete(self, value):
+        """Delete a value from the BST"""
+        self.root = self._delete_recursive(self.root, value)
+
+    def _delete_recursive(self, node, value):
+        """Helper method for recursive deletion"""
+        # When deleting a node in a BST you find the node first, then handle one of three cases:
+            # 1. Node is a leaf (no children) -> remove it (return None to parent).
+            # 2. Node has 1 child -> replace the node with its single child (return that child to parent).
+            # 3. Node has 2 children -> find the successor (smallest node in the right subtree), copy the successor's value into the node, then delete the successor from the right subtree. (_find_min helps find the successor.)
+
+        # Step-1: Find node
+        if not node:
+            return None
+        if value < node.value:
+            node.left = self._delete_recursive(node.left, value)    # (node.left == value) means we found the node
+        elif value > node.value:
+            node.right = self._delete_recursive(node.right, value)  # (node.right == value) means we found the node
+        else:
+            # Step-2: Check children
+            # Case 1: No children or one child
+            if not node.left:
+                return node.right
+            if not node.right:
+                return node.left
+            
+            # Case 2: Two children
+            # We have to make the smallest element in the right subtree as the root if self.root == value, because the smallest element in the right subtree will still be bigger than the elements in left subtree
+            successor = self._find_min(node.right)
+            node.value = successor.value
+            # delete successor in right subtree, as it still exists even though we made that smallest element from right subtree as the root element.
+            node.right = self._delete_recursive(node.right, successor.value)
+        return node
+    
+    def _find_min(self, node):
+        """Find the minimum value node in a subtree."""
+        # Start at node (self.root), keep going left until there is no left child. That leftmost node is the smallest value in that subtree.
+        current = node
+        while current.left:
+            current = current.left
+        return current
+
