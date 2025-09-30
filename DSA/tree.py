@@ -163,4 +163,3 @@ class BST:
         while current.left:
             current = current.left
         return current
-
