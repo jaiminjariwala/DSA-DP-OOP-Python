@@ -9,4 +9,22 @@
 arr = [8, 3, 5, 9, 2, 4]
 
 def selection_sort(arr):
-    pass
+    n = len(arr)
+
+    # traverse through all array elements
+    for i in range(n-1):
+        
+        # assume the current index is the minimum
+        min_index = i
+
+        # find the minimum element in the remaining unsorted array
+        for j in range(i+1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # swap the found minimum element with the first unsorted element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    
+    return arr
+
+selection_sort(arr)
