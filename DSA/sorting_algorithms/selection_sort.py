@@ -23,8 +23,10 @@ def selection_sort(arr):
                 min_index = j
         
         # swap the found minimum element with the first unsorted element
+        print(f"Step {i+1}: swapping {arr[i]} and {arr[min_index]}")
         arr[i], arr[min_index] = arr[min_index], arr[i]
+        print(f"Array now: {arr}")
     
     return arr
 
-selection_sort(arr)
+print(f"Final Sorted Array: {selection_sort(arr)}")
